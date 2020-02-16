@@ -7,16 +7,16 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object RetrofitBuilder {
+class RetrofitBuilder {
 
-    private const val BASE_URL = "https://newsapi.org/v2/"
-    private const val API_KEY = "194ea0af1aee47b5b163ecefc8c38738"
+    private val baseUrl = "https://newsapi.org/v2/"
+    private val apiKey = "194ea0af1aee47b5b163ecefc8c38738"
 
     val serverApi: RestApi
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(getInterceptor())
@@ -35,7 +35,7 @@ object RetrofitBuilder {
             val originalHttpUrl = original
                 .url()
                 .newBuilder()
-                .addQueryParameter("apiKey", API_KEY)
+                .addQueryParameter("apiKey", apiKey)
 
             val request = original.newBuilder()
                 .header("Content-Type", "application/json")

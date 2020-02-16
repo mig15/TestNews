@@ -6,8 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.developer.tap2visittest.R
-import com.android.developer.tap2visittest.data.repository.RepositoryImpl
-import com.android.developer.tap2visittest.domain.interactor.TopUsNewsInteractor
+import com.android.developer.tap2visittest.common.MyApplication
 import com.android.developer.tap2visittest.presentation.list.adapter.SingleRecyclerAdapter
 import com.android.developer.tap2visittest.presentation.list.adapter.addPaginationListener
 import com.android.developer.tap2visittest.presentation.list.items.AdapterItem
@@ -26,9 +25,7 @@ class FragmentNews : Fragment(), NewsMvp {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val repository = RepositoryImpl()
-        val case = TopUsNewsInteractor(repository)
-        presenter = PresenterNews(case)
+        presenter = MyApplication.component.getPresenter()
 
         adapter = SingleRecyclerAdapter()
     }

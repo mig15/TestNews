@@ -3,6 +3,7 @@ package com.android.developer.tap2visittest.presentation.mvp.view.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.developer.tap2visittest.R
+import com.android.developer.tap2visittest.common.MyApplication
 import com.android.developer.tap2visittest.presentation.mvp.view.fragment.FragmentDetail
 import com.android.developer.tap2visittest.presentation.mvp.view.fragment.FragmentNews
 import com.android.developer.tap2visittest.presentation.navigation.FragmentListener
@@ -10,11 +11,13 @@ import com.android.developer.tap2visittest.presentation.navigation.FragmentNavig
 
 class MainActivity : AppCompatActivity(), FragmentListener {
 
-    private val navigator = FragmentNavigator()
+    private lateinit var navigator: FragmentNavigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        navigator = MyApplication.component.getNavigator()
 
         navigator.changeFragment(this, FragmentNews(), R.id.container)
     }

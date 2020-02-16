@@ -5,13 +5,13 @@ import com.android.developer.tap2visittest.data.net.RetrofitBuilder
 import com.android.developer.tap2visittest.domain.repository.Repository
 import io.reactivex.Observable
 
-class RepositoryImpl : Repository {
+class RepositoryImpl(private val retrofitBuilder: RetrofitBuilder) : Repository {
 
     override fun getTopUsNews(page: Int): Observable<ResponseTopUsNews> {
-        return RetrofitBuilder.serverApi.requestTopUsNews("us", page)
+        return retrofitBuilder.serverApi.requestTopUsNews("us", page)
     }
 
     override fun getTopUsNewsForCategory(category: String, page: Int): Observable<ResponseTopUsNews> {
-        return RetrofitBuilder.serverApi.requestTopUsNewsForCategory("us", category, page)
+        return retrofitBuilder.serverApi.requestTopUsNewsForCategory("us", category, page)
     }
 }

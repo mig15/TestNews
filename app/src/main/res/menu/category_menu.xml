@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_all"
+        android:orderInCategory="100"
+        android:title="All"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_business"
+        android:orderInCategory="100"
+        android:title="Business"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_entertainment"
+        android:orderInCategory="100"
+        android:title="Entertainment"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_general"
+        android:orderInCategory="100"
+        android:title="General"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_health"
+        android:orderInCategory="100"
+        android:title="Health"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_science"
+        android:orderInCategory="100"
+        android:title="Science"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sports"
+        android:orderInCategory="100"
+        android:title="Sports"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_technology"
+        android:orderInCategory="100"
+        android:title="Technology"
+        app:showAsAction="never" />
+</menu>

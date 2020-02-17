@@ -16,7 +16,7 @@ class ResponseMapper {
                     description = it.description ?: "",
                     urlToImage = it.urlToImage ?: "",
                     date = it.publishedAt ?: "",
-                    detailUrl = it.detailUrl ?: "https://newsapi.org/")
+                    detailUrl = it.detailUrl ?: "https://www.vesti.ru/")
             }
         }
     }

@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.android.developer.tap2visittest"
+        applicationId "com.android.developer.news"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
